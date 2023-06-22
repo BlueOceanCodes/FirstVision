@@ -14,6 +14,7 @@ struct ContentView: View {
         NavigationSplitView {
             List {
                 Text("Item")
+                Text("Alex")
             }
             .navigationTitle("Sidebar")
         } detail: {
