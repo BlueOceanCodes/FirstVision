@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF4C61612A43B72F00C52852 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = FF4C61602A43B72F00C52852 /* RealityKitContent */; };
 		FF4C61632A43B72F00C52852 /* MyVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C61622A43B72F00C52852 /* MyVisionApp.swift */; };
 		FF4C61652A43B72F00C52852 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C61642A43B72F00C52852 /* ContentView.swift */; };
 		FF4C61672A43B73100C52852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4C61662A43B73100C52852 /* Assets.xcassets */; };
@@ -16,13 +15,10 @@
 		FFB0A9952A43EA36000ECD6C /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FFB0A9942A43EA36000ECD6C /* robot.usdz */; };
 		FFB0A9972A43EA6B000ECD6C /* shoe.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FFB0A9962A43EA6B000ECD6C /* shoe.usdz */; };
 		FFE45FD72A44D4540039CF5C /* car.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FFE45FD62A44D4540039CF5C /* car.usdz */; };
-		FFE45FD92A44D6A70039CF5C /* slide.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FFE45FD82A44D6A70039CF5C /* slide.usdz */; };
-		FFE45FDB2A44D7A40039CF5C /* drummer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FFE45FDA2A44D7A40039CF5C /* drummer.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF4C615B2A43B72F00C52852 /* MyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF4C615F2A43B72F00C52852 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		FF4C61622A43B72F00C52852 /* MyVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVisionApp.swift; sourceTree = "<group>"; };
 		FF4C61642A43B72F00C52852 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF4C61662A43B73100C52852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,8 +27,6 @@
 		FFB0A9942A43EA36000ECD6C /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
 		FFB0A9962A43EA6B000ECD6C /* shoe.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = shoe.usdz; sourceTree = "<group>"; };
 		FFE45FD62A44D4540039CF5C /* car.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = car.usdz; sourceTree = "<group>"; };
-		FFE45FD82A44D6A70039CF5C /* slide.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slide.usdz; sourceTree = "<group>"; };
-		FFE45FDA2A44D7A40039CF5C /* drummer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = drummer.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF4C61612A43B72F00C52852 /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +44,6 @@
 			isa = PBXGroup;
 			children = (
 				FF4C615D2A43B72F00C52852 /* MyVision */,
-				FF4C615E2A43B72F00C52852 /* Packages */,
 				FF4C615C2A43B72F00C52852 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,20 +65,10 @@
 				FFE45FD62A44D4540039CF5C /* car.usdz */,
 				FFB0A9962A43EA6B000ECD6C /* shoe.usdz */,
 				FFB0A9942A43EA36000ECD6C /* robot.usdz */,
-				FFE45FDA2A44D7A40039CF5C /* drummer.usdz */,
-				FFE45FD82A44D6A70039CF5C /* slide.usdz */,
 				FF4C61662A43B73100C52852 /* Assets.xcassets */,
 				FF4C61682A43B73100C52852 /* Preview Content */,
 			);
 			path = MyVision;
-			sourceTree = "<group>";
-		};
-		FF4C615E2A43B72F00C52852 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				FF4C615F2A43B72F00C52852 /* RealityKitContent */,
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 		FF4C61682A43B73100C52852 /* Preview Content */ = {
@@ -114,7 +96,6 @@
 			);
 			name = MyVision;
 			packageProductDependencies = (
-				FF4C61602A43B72F00C52852 /* RealityKitContent */,
 			);
 			productName = MyVision;
 			productReference = FF4C615B2A43B72F00C52852 /* MyVision.app */;
@@ -159,10 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB0A9972A43EA6B000ECD6C /* shoe.usdz in Resources */,
-				FFE45FDB2A44D7A40039CF5C /* drummer.usdz in Resources */,
 				FF4C616A2A43B73100C52852 /* Preview Assets.xcassets in Resources */,
 				FF4C61672A43B73100C52852 /* Assets.xcassets in Resources */,
-				FFE45FD92A44D6A70039CF5C /* slide.usdz in Resources */,
 				FFB0A9952A43EA36000ECD6C /* robot.usdz in Resources */,
 				FFE45FD72A44D4540039CF5C /* car.usdz in Resources */,
 			);
@@ -383,13 +362,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FF4C61602A43B72F00C52852 /* RealityKitContent */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RealityKitContent;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF4C61532A43B72F00C52852 /* Project object */;
 }
