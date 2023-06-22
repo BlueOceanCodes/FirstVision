@@ -12,62 +12,80 @@ import RealityKitContent
 struct NavView: View {
 
     var members: [Member]
-    var nameTapped: (String) -> Void
+    var memberTapped: (Member) -> Void
 
     var body: some View {
         List(members) { member in
             Text(member.id)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .background(.red)
+                .frame(maxWidth: 100, alignment: .center)
                 .frame(depth: 20)
                 .onTapGesture {
-                    nameTapped(member.id)
+                    memberTapped(member)
+                }
+                .background {
+                    Color.yellow
                 }
         }
         .navigationTitle("Family")
-        .navigationSplitViewColumnWidth(200)
+        .navigationSplitViewColumnWidth(150)
+        .background(.red)
+    }
+}
+
+struct DetailView: View {
+
+    var member: Member
+
+    var body: some View {
+        VStack {
+
+            Spacer()
+
+            Model3D(named: member.art) { model in
+                model
+            } placeholder: {
+                Text("Loading Art")
+                    .frame(maxWidth: .infinity)
+            }
+
+            Spacer()
+            VStack(alignment: .leading) {
+
+                Text("Role: \(member.details)")
+
+                Text("Color: \(member.favoriteColor)")
+                    .padding(.top, 8)
+                    .frame(alignment: .leading)
+                    .background(.red)
+            }
+            .padding(.bottom, 32)
+            .background(.yellow)
+            .alignmentGuide(.leading, computeValue: { _ in 0 })
+
+        }
+        .navigationTitle(member.id)
+        .background(.blue)
     }
 }
 
 let familyMembers = [
-    Member(id: "Alex", details: "The husband", favoriteColor: "Blue"),
-    Member(id: "Imi", details: "The wife", favoriteColor: "Mint"),
-    Member(id: "Jr", details: "The boy", favoriteColor: "Red"),
+    Member(id: "Alex", details: "The husband", favoriteColor: "Blue", art: "shoe"),
+    Member(id: "Imi", details: "The wife", favoriteColor: "Mint", art: "robot"),
+    Member(id: "Jr", details: "The boy", favoriteColor: "Red", art: "car")
 ]
 
 struct ContentView: View {
 
-    @State var names = familyMembers
-    @State var title = "Details"
+    @State private var members = familyMembers
 
     var body: some View {
-        NavigationSplitView {
-            NavView(members: names,
-                    nameTapped: { name in
-                title = name
-            })
-        } detail: {
-            VStack {
-                RealityView { content in
-                    guard let earth = try? await Entity(named: "shoe") else { return }
-                    content.add(earth)
-                }
 
-                Model3D(named: "guitar") { model in
+        DetailView(member: familyMembers[0])
 
-                } placeholder: {
-                    Text("Yo")
-                }
-                    .padding(.bottom, 50)
-
-                Text("Hello, world!")
-            }
-            .navigationTitle(title)
-            .padding()
-        }
     }
 }
 
 #Preview {
+//    ContentView(selectedMember: Member.example)
     ContentView()
 }
