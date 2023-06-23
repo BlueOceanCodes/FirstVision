@@ -14,6 +14,7 @@
 		FF7BA03F2A43E45800E3C397 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7BA03E2A43E45800E3C397 /* Member.swift */; };
 		FFB0A9952A43EA36000ECD6C /* robot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FFB0A9942A43EA36000ECD6C /* robot.usdz */; };
 		FFB0A9972A43EA6B000ECD6C /* shoe.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FFB0A9962A43EA6B000ECD6C /* shoe.usdz */; };
+		FFC9B6BC2A4533E100D71564 /* TextAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9B6BB2A4533E100D71564 /* TextAnimation.swift */; };
 		FFE45FD72A44D4540039CF5C /* car.usdz in Resources */ = {isa = PBXBuildFile; fileRef = FFE45FD62A44D4540039CF5C /* car.usdz */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		FF7BA03E2A43E45800E3C397 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		FFB0A9942A43EA36000ECD6C /* robot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = robot.usdz; sourceTree = "<group>"; };
 		FFB0A9962A43EA6B000ECD6C /* shoe.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = shoe.usdz; sourceTree = "<group>"; };
+		FFC9B6BB2A4533E100D71564 /* TextAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnimation.swift; sourceTree = "<group>"; };
 		FFE45FD62A44D4540039CF5C /* car.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = car.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 			children = (
 				FF4C61622A43B72F00C52852 /* MyVisionApp.swift */,
 				FF4C61642A43B72F00C52852 /* ContentView.swift */,
+				FFC9B6BB2A4533E100D71564 /* TextAnimation.swift */,
 				FF7BA03E2A43E45800E3C397 /* Member.swift */,
 				FFE45FD62A44D4540039CF5C /* car.usdz */,
 				FFB0A9962A43EA6B000ECD6C /* shoe.usdz */,
@@ -157,6 +160,7 @@
 				FF4C61652A43B72F00C52852 /* ContentView.swift in Sources */,
 				FF7BA03F2A43E45800E3C397 /* Member.swift in Sources */,
 				FF4C61632A43B72F00C52852 /* MyVisionApp.swift in Sources */,
+				FFC9B6BC2A4533E100D71564 /* TextAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,13 +305,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tql.MyVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -330,13 +333,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tql.MyVision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};

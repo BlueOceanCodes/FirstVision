@@ -36,7 +36,11 @@ struct DetailView: View {
 
     var member: Member
 
+    @State var titleText: String = ""
+    @State var isTitleFinished: Bool = false
+
     var body: some View {
+
         VStack {
 
             Spacer()
@@ -49,30 +53,62 @@ struct DetailView: View {
             }
 
             Spacer()
-            VStack(alignment: .leading) {
+            HStack {
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Role: ")
 
-                Text("Role: \(member.details)")
-
-                Text("Color: \(member.favoriteColor)")
-                    .padding(.top, 8)
-                    .frame(alignment: .leading)
+                        Text(member.details)
+                            .hidden()
+                            .overlay(alignment: .leading) {
+                                Text(titleText)
+                            }
+                    }
+                    .padding()
                     .background(.red)
-            }
-            .padding(.bottom, 32)
-            .background(.yellow)
-            .alignmentGuide(.leading, computeValue: { _ in 0 })
 
+                    Text("Color: \(member.favoriteColor)")
+                        .padding(.top, 8)
+                        .padding()
+                        .frame(alignment: .leading)
+                        .background(.red)
+
+                }
+                .typeText(
+                    text: $titleText,
+                    finalText: member.details,
+                    isFinished: $isTitleFinished,
+                    isAnimated: true)
+                .background(.yellow)
+                .alignmentGuide(.leading, computeValue: { _ in 0 })
+                .frame(maxWidth: .infinity)
+
+            }
+            .frame(maxWidth: .infinity)
+            .background(.green)
         }
+
         .navigationTitle(member.id)
         .background(.blue)
     }
 }
 
-let familyMembers = [
-    Member(id: "Alex", details: "The husband", favoriteColor: "Blue", art: "shoe"),
+var familyMembers = [
+    Member(id: "Alex",
+           details: "The husband, leader, provider and protector of the family",
+           favoriteColor: "Blue", art: "shoe"),
     Member(id: "Imi", details: "The wife", favoriteColor: "Mint", art: "robot"),
     Member(id: "Jr", details: "The boy", favoriteColor: "Red", art: "car")
 ]
+
+private struct TitleText: View {
+    var title: String
+    var body: some View {
+        Text(title)
+            .monospaced()
+            .font(.system(size: 50, weight: .bold))
+    }
+}
 
 struct ContentView: View {
 
@@ -80,7 +116,34 @@ struct ContentView: View {
 
     var body: some View {
 
-        DetailView(member: familyMembers[0])
+        NavigationStack {
+
+            HStack {
+                NavigationLink(destination: DetailView(member: familyMembers[0])) {
+
+                    ZStack {
+                        Image("blue")
+                            .resizable()
+                            .frame(width: 60.0, height: 60.0, alignment: .center)
+                        Text("Alex")
+                    }
+                }
+
+                NavigationLink(destination: DetailView(member: familyMembers[1])) {
+
+                    ZStack {
+                        Image("blue")
+                            .resizable()
+                            .frame(width: 60.0, height: 60.0, alignment: .center)
+                        Text("Imi")
+                    }
+                }
+            }
+
+
+        }
+
+
 
     }
 }
