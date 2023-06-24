@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF42C8C32A47911B00EE0CEF /* RotationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42C8C22A47911B00EE0CEF /* RotationSystem.swift */; };
+		FF42C8C52A47AB2400EE0CEF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42C8C42A47AB2400EE0CEF /* DetailView.swift */; };
 		FF4C61632A43B72F00C52852 /* MyVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C61622A43B72F00C52852 /* MyVisionApp.swift */; };
 		FF4C61652A43B72F00C52852 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4C61642A43B72F00C52852 /* ContentView.swift */; };
 		FF4C61672A43B73100C52852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4C61662A43B73100C52852 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF42C8C22A47911B00EE0CEF /* RotationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationSystem.swift; sourceTree = "<group>"; };
+		FF42C8C42A47AB2400EE0CEF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FF4C615B2A43B72F00C52852 /* MyVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4C61622A43B72F00C52852 /* MyVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVisionApp.swift; sourceTree = "<group>"; };
 		FF4C61642A43B72F00C52852 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,8 +67,10 @@
 			children = (
 				FF4C61622A43B72F00C52852 /* MyVisionApp.swift */,
 				FF4C61642A43B72F00C52852 /* ContentView.swift */,
+				FF42C8C42A47AB2400EE0CEF /* DetailView.swift */,
 				FFC9B6BB2A4533E100D71564 /* TextAnimation.swift */,
 				FF7BA03E2A43E45800E3C397 /* Member.swift */,
+				FF42C8C22A47911B00EE0CEF /* RotationSystem.swift */,
 				FFE45FD62A44D4540039CF5C /* car.usdz */,
 				FFB0A9962A43EA6B000ECD6C /* shoe.usdz */,
 				FFB0A9942A43EA36000ECD6C /* robot.usdz */,
@@ -158,9 +164,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF4C61652A43B72F00C52852 /* ContentView.swift in Sources */,
+				FF42C8C52A47AB2400EE0CEF /* DetailView.swift in Sources */,
 				FF7BA03F2A43E45800E3C397 /* Member.swift in Sources */,
 				FF4C61632A43B72F00C52852 /* MyVisionApp.swift in Sources */,
 				FFC9B6BC2A4533E100D71564 /* TextAnimation.swift in Sources */,
+				FF42C8C32A47911B00EE0CEF /* RotationSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

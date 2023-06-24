@@ -63,7 +63,6 @@ private struct TypeTextModifier: ViewModifier {
                 }
 
                 // Wrap up the title sequence.
-                try? await Task.sleep(for: .milliseconds(400))
                 text = finalText
                 isFinished = true
             }
