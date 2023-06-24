@@ -42,52 +42,52 @@ struct DetailView: View {
     var body: some View {
 
         VStack {
-
             Spacer()
 
             Model3D(named: member.art) { model in
                 model
+                    .background(.orange)
             } placeholder: {
                 Text("Loading Art")
-                    .frame(maxWidth: .infinity)
             }
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 400, height: 170)
+            .background(.orange)
 
             Spacer()
-            HStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Role: ")
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("Role: ")
 
-                        Text(member.details)
-                            .hidden()
-                            .overlay(alignment: .leading) {
-                                Text(titleText)
-                            }
-                    }
+                    Text(member.details)
+                    //                        .hidden()
+                    //                        .overlay(alignment: .leading) {
+                    //                            Text(titleText)
+                    //                        }
+                        .background(.green)
+                    Spacer()
+                }
+                .padding()
+                .background(.red)
+
+                Text("Color: \(member.favoriteColor)")
                     .padding()
                     .background(.red)
 
-                    Text("Color: \(member.favoriteColor)")
-                        .padding(.top, 8)
-                        .padding()
-                        .frame(alignment: .leading)
-                        .background(.red)
-
-                }
-                .typeText(
-                    text: $titleText,
-                    finalText: member.details,
-                    isFinished: $isTitleFinished,
-                    isAnimated: true)
-                .background(.yellow)
-                .alignmentGuide(.leading, computeValue: { _ in 0 })
-                .frame(maxWidth: .infinity)
-
             }
-            .frame(maxWidth: .infinity)
-            .background(.green)
-        }
+            .padding(.bottom, 30)
 
+            //            .typeText(
+            //                text: $titleText,
+            //                finalText: member.details,
+            //                isFinished: $isTitleFinished,
+            //                isAnimated: true)
+            .frame(maxWidth: .infinity)
+            .alignmentGuide(.leading, computeValue: { _ in 0 })
+            .background(.yellow)
+        }
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity)
         .navigationTitle(member.id)
         .background(.blue)
     }
@@ -96,9 +96,19 @@ struct DetailView: View {
 var familyMembers = [
     Member(id: "Alex",
            details: "The husband, leader, provider and protector of the family",
-           favoriteColor: "Blue", art: "shoe"),
-    Member(id: "Imi", details: "The wife", favoriteColor: "Mint", art: "robot"),
-    Member(id: "Jr", details: "The boy", favoriteColor: "Red", art: "car")
+           favoriteColor: "Blue",
+           image: "blue",
+           art: "shoe"),
+    Member(id: "Imi",
+           details: "The wife",
+           favoriteColor: "Mint",
+           image: "blue",
+           art: "robot"),
+    Member(id: "Jr",
+           details: "The boy",
+           favoriteColor: "Red",
+           image: "blue",
+           art: "car")
 ]
 
 private struct TitleText: View {
@@ -114,41 +124,47 @@ struct ContentView: View {
 
     @State private var members = familyMembers
 
+    @State var titleText: String = ""
+    @State var isTitleFinished: Bool = false
+
     var body: some View {
 
         NavigationStack {
-
-            HStack {
-                NavigationLink(destination: DetailView(member: familyMembers[0])) {
-
-                    ZStack {
-                        Image("blue")
-                            .resizable()
-                            .frame(width: 60.0, height: 60.0, alignment: .center)
-                        Text("Alex")
+            VStack {
+                Text("Click on each member for more details")
+                    .hidden()
+                    .font(.title)
+                    .padding(.bottom, 32)
+                    .overlay() {
+                        Text("Click on each member for more details")
                     }
-                }
 
-                NavigationLink(destination: DetailView(member: familyMembers[1])) {
-
-                    ZStack {
-                        Image("blue")
-                            .resizable()
-                            .frame(width: 60.0, height: 60.0, alignment: .center)
-                        Text("Imi")
-                    }
+                HStack {
+                    createNavLinkFor(member: familyMembers[0])
+                    createNavLinkFor(member: familyMembers[1])
+                    createNavLinkFor(member: familyMembers[2])
                 }
+                
             }
-
+            .navigationTitle("The Family")
 
         }
+    }
 
+    private func createNavLinkFor(member: Member) -> some View {
+        NavigationLink(destination: DetailView(member: member)) {
 
-
+            ZStack {
+                Image(member.image)
+                    .resizable()
+                    .frame(width: 60.0, height: 60.0, alignment: .center)
+                Text(member.id)
+            }
+        }
     }
 }
 
 #Preview {
-//    ContentView(selectedMember: Member.example)
+    //    ContentView(selectedMember: Member.example)
     ContentView()
 }

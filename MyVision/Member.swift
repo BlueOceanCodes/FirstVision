@@ -9,7 +9,12 @@ struct Member: Identifiable, Hashable {
     let id: String
     let details: String
     let favoriteColor: String
+    let image: String
     let art: String
 
-    static let example = Member(id: "User", details: "The details of this member are confidential", favoriteColor: "Orange", art: "drummer")
+    static let example = Member(id: "User",
+                                details: "The details of this member are confidential",
+                                favoriteColor: "Orange",
+                                image: "blue",
+                                art: "drummer")
 }
